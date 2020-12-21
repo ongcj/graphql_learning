@@ -1,6 +1,7 @@
 type Query {
     hello(who: String): String!
     people: [Person!]!
+    employee(id: ID): Employee!
 }
 
 type Mutation {
@@ -16,3 +17,8 @@ type Person {
     dateOfBirth: Date
 }
 
+type Employee {
+    businessentityid: ID!
+    loginid: String!
+    jobtitle: String!
+}
