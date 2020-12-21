@@ -1,14 +1,26 @@
 package com.example.demo.model;
 
+import java.time.LocalDate;
+
 public class Person {
     private int id;
     private String firstName;
     private String lastName;
+    private LocalDate dateOfBirth;
 
-    public Person(int id, String firstName, String lastName) {
+    public Person(int id, String firstName, String lastName, LocalDate dateOfBirth) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public int getId() {

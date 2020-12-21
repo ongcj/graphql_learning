@@ -4,12 +4,15 @@ type Query {
 }
 
 type Mutation {
-    createPerson(firstName: String!, lastName: String!): Person!
+    createPerson(firstName: String!, lastName: String!, dateOfBirth: Date): Person!
 }
+
+scalar Date
 
 type Person {
     id: Int!
     firstName: String!
     lastName: String!
+    dateOfBirth: Date
 }
 
