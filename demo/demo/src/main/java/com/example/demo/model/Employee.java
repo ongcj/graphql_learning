@@ -1,9 +1,6 @@
 package com.example.demo.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "employee")
@@ -13,10 +10,14 @@ public class Employee {
 
     }
 
-    public Employee(final int businessentityid, final String loginid, final String jobtitle) {
+    public Employee(final int businessentityid,
+                    final String loginid,
+                    final String jobtitle,
+                    final EmployeePayHistory payhistory) {
         this.businessentityid = businessentityid;
         this.loginid = loginid;
         this.jobtitle = jobtitle;
+        this.payhistory = payhistory;
     }
     @Id
     private int businessentityid;
@@ -24,7 +25,9 @@ public class Employee {
     private String loginid;
     @Column
     private String jobtitle;
-
+    @OneToOne
+    @JoinColumn(name = "businessentityid")
+    private EmployeePayHistory payhistory;
 
 
 }

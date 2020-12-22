@@ -17,6 +17,5 @@ public class EmployeeService {
 
     public Employee getEmployee(int id) {
         return repository.findById(id).orElse(null);
-//        return new Employee(id, "test", "try");
     }
 }
